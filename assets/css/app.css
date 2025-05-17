@@ -5,15 +5,20 @@
     --color-white: #FFFFFF;
 }
 
+*{
+    box-sizing: border-box;
+}
+
 html{
+    padding: 0px;
+    margin: 0px;
     background-color: var(--color-primary);
 }
 
-main {
-    min-height: 100vh;
-}
+
 
 body{
+    margin: 0px;
     font-family: "Jost", sans-serif;
     font-optical-sizing: auto;
     font-weight: normal;
@@ -33,16 +38,39 @@ header,
     justify-content: space-between;
     align-items: center;
 }
+
+header{
+    position: fixed;
+    background-color: var(--color-primary);
+    z-index: 9000;
+    width: 100%;
+    padding: 20px;
+}
+
 .header-buttons{
     gap: 20px;
 }
 
 
+.header-logo{
+    width: 25vw;
+    max-width: 120px;
+}
+
 .header-logo .platform-title{
     display: none;
 }
 
+main {
+    min-height: 100vh;
+    padding: 150px 20px 20px;
+}
+
 /* SECTION TITLE*/
+
+.section-title{
+    font-size: 1.5rem;
+}
 
 #top-text::after{
     content: '3';
@@ -69,6 +97,14 @@ header,
     gap: 3px 6px;
 }
 
+@media ( 460px >= width){
+
+    main {
+        padding-top: 40vw;
+    }
+
+}
+
 
 
 @media ( 750px <= width){
@@ -78,6 +114,16 @@ header,
 }
 
 @media ( 750px <= width < 1125px){
+
+    .header-logo{
+        width: 25vw;
+        max-width: 150px;
+    }
+
+    main{
+        padding-top: 170px;
+    }
+
     /* FIRST */
     .first, .second{
         grid-template-columns: repeat(3, 1fr);
@@ -86,6 +132,16 @@ header,
 }
 
 @media (1125px <= width < 1280px){
+
+    main{
+        padding-top: 170px;
+    }
+
+    .header-logo{
+        width: 25vw;
+        max-width: 150px;
+    }
+
     .first, .second{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -109,6 +165,30 @@ header,
 }
 
 @media (width >= 1280px){
+    main{
+        padding-top: 200px;
+    }
+
+    .header-logo{
+        max-width: 50vw;
+        display: flex;
+        flex: 1;
+        align-items: center;
+        gap: 1rem
+    }
+
+    .header-logo img{
+        max-width: 145px;
+    }
+    
+    .header-logo .platform-title{
+        display: block;
+        width: 100%;
+        font-size: 2rem;
+
+    }
+
+
     #top-text::after{
         content: '5';
     }
